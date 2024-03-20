@@ -1,9 +1,9 @@
 import React from "react";
+import { ReactRogue } from "./ReactRogue";
 
 const App = () => (
   <div className="App">
-    <h1>Title</h1>
-    <p>Some content</p>
+    <ReactRogue />
   </div>
 );
 
