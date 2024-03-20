@@ -5,26 +5,26 @@ class Inputmanager {
     this.observer.push(fn);
   }
   unsubscribe(fn) {
-    this.observers = this.observers.filter((subscriber) => subscriber !== fn);
+    this.observer = this.observer.filter((subscriber) => subscriber !== fn);
   }
 
   broadcast(action, data) {
-    this.observers.forEach((subscriber) => subscriber(action, data));
+    this.observer.forEach((subscriber) => subscriber(action, data));
   }
 
   handleKeys = (e) => {
     e.preventDefault();
-    switch (e.keyCode) {
-      case 37:
+    switch (e.key) {
+      case "a":
         this.broadcast("move", { x: -1, y: 0 });
         break;
-      case 38:
+      case "w":
         this.broadcast("move", { x: 0, y: -1 });
         break;
-      case 39:
+      case "d":
         this.broadcast("move", { x: 1, y: 0 });
         break;
-      case 40:
+      case "s":
         this.broadcast("move", { x: 0, y: 1 });
         break;
       default:
@@ -39,3 +39,5 @@ class Inputmanager {
     document.removeEventListener("keydown", this.handleKeys);
   }
 }
+
+export default Inputmanager;
