@@ -27,7 +27,6 @@ class Spawner {
         new Loot(
           getRandomInt(this.world.width),
           getRandomInt(this.world.height),
-          this,
           this.world.tilesize,
           lootTable[getRandomInt(lootTable.length)]
         )

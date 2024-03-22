@@ -16,6 +16,10 @@ class World {
     return this.entities[0];
   }
 
+  add(entity) {
+    this.entities.push(entity);
+  }
+
   moveToSpace(entity) {
     for (let x = entity.x; x < this.width; x++) {
       for (let y = entity.y; y < this.height; y++) {
@@ -68,6 +72,7 @@ class World {
       }
     }
     this.entities.forEach((entity) => {
+      console.log("draw: ", entity);
       entity.draw(ctx);
     });
   }

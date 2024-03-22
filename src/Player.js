@@ -3,7 +3,7 @@ import Entity from "./Entity";
 class Player extends Entity {
   attributes = {
     name: "Player",
-    color: "#e74c3c",
+    color: "#2ecc71",
     health: 10,
   };
 
