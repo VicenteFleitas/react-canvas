@@ -4,6 +4,10 @@ class Entity {
     this.attributes = { ...attributes };
   }
 
+  action(verb, world) {
+    console.log(`Verb: ${verb}`);
+  }
+
   draw(ctx) {
     ctx.fillStyle = this.attributes.color || "#ecf0f1";
     ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size);
