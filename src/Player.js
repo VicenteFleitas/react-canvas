@@ -1,21 +1,15 @@
-class Player {
-  constructor(x, y, size) {
-    this.x = x;
-    this.y = y;
-    this.size = size;
-  }
+import Entity from "./Entity";
+
+class Player extends Entity {
+  attributes = {
+    name: "Player",
+    color: "#e74c3c",
+    health: 10,
+  };
 
   move(dx, dy) {
     this.x += dx;
     this.y += dy;
-  }
-
-  draw(ctx) {
-    ctx.fillStyle = "#e74c3c";
-    // ctx.textBaseline = "hanging";
-    // ctx.font = "16px Helvetica";
-    ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size);
-    // ctx.fillText("@", this.x * this.size, this.y * this.size);
   }
 
   copyPlayer() {
