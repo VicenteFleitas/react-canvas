@@ -25,6 +25,7 @@ export const ReactRogue = ({ width, height, tilesize }) => {
     let spawner = new Spawner(newWorld);
     spawner.spawnLoot(10);
     spawner.spawnMonsters(6);
+    spawner.spawnStairs();
     setworld(newWorld);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
