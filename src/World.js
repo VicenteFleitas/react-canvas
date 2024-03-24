@@ -5,6 +5,7 @@ class World {
   constructor(width, height, tilesize) {
     Object.assign(this, { width, height, tilesize });
     this.entities = [new Player(0, 0, 16)];
+    this.history = ["You enter the dungeon", "---"];
 
     this.worldmap = new Array(this.width);
     for (let x = 0; x < this.width; x++) {
@@ -99,6 +100,11 @@ class World {
       this.tilesize,
       this.tilesize
     );
+  }
+
+  addToHistory(history) {
+    this.history.push(history);
+    if (this.history.length > 6) this.history.shift();
   }
 }
 
