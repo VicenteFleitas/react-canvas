@@ -13,11 +13,6 @@ COPY package.json /react-docker-example/
 
 RUN npm install
 RUN npm run build
-
-Run rm public/ /react-docker-example/public
-Run rm src/ /react-docker-example/src
-Run rm package.json /react-docker-example/
-
 RUN npm install -g serve
 RUN serve -s build
 EXPOSE 3000
