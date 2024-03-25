@@ -5,6 +5,11 @@ COPY public/ /react-docker-example/public
 COPY src/ /react-docker-example/src
 COPY package.json /react-docker-example/
 
-RUN npm install
-CMD ["npm", "start"]
+# RUN npm install
+# CMD ["npm", "start"]
+# EXPOSE 3000
+
+RUN npm run build
+RUN npm install -g serve
 EXPOSE 3000
+CMD ["serve", "-s", "build", "-l", "3000"]
