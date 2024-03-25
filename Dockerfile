@@ -13,7 +13,7 @@ COPY package.json /react-docker-example/
 
 RUN npm install
 RUN npm run build
-npm install -g serve
-serve -s build
+RUN npm install -g serve
+RUN serve -s build
 EXPOSE 3000
 # CMD ["npm", "start"]
