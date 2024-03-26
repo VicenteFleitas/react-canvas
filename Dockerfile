@@ -1,13 +1,11 @@
-FROM node:18-alpine
-WORKDIR /react-docker-example/
+FROM node:latest
 
-COPY public/ /react-docker-example/public
-COPY src/ /react-docker-example/src
-COPY package.json /react-docker-example/
+RUN mkdir /root/app
+WORKDIR /root/app
+COPY . /root/app
 
-RUN npm install
-# RUN npm run build
-# RUN npm install -g serve
-# RUN serve -s build
-CMD ["npm", "start"]
+RUN npm install -g serve
+
 EXPOSE 3000
+
+CMD serve -s build
